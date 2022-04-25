@@ -1,11 +1,14 @@
 {
-  "name": "@axelspringer/graphql-google-pubsub",
-  "version": "2.1.0",
+  "name": "@vikalp_p/graphql-google-pubsub",
+  "version": "2.1.1",
   "description": "A graphql-subscriptions PubSub Engine using Google PubSub",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/axelspringer/graphql-google-pubsub.git"
+    "url": "https://github.com/VikalpP/graphql-google-pubsub.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "graphql",
@@ -14,21 +17,26 @@
     "apollo",
     "subscriptions"
   ],
-  "author": "Jonas Hackenberg",
+  "author": "Vikalp Panseriya (vikalppanseriya@gmail.com)",
+  "originalAuthor": "Jonas Hackenberg (jonas@arkulpa.at)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/axelspringer/graphql-google-pubsub/issues"
+    "url": "https://github.com/VikalpP/graphql-google-pubsub/issues"
   },
-  "homepage": "https://github.com/axelspringer/graphql-google-pubsub",
+  "homepage": "https://github.com/VikalpP/graphql-google-pubsub",
   "contributors": [
     {
       "name": "Jonas Hackenberg",
       "email": "jonas@arkulpa.at"
+    },
+    {
+      "name": "Vikalp P",
+      "email": "vikalppanseriya@gmail.com"
     }
   ],
   "scripts": {
-    "prepublishOnly": "npm run test",
     "compile": "tsc",
+    "build": "npm run compile && npm run testonly",
     "pretest": "npm run compile",
     "test": "npm run testonly -- && npm run integration --",
     "posttest": "npm run lint",
@@ -36,7 +44,8 @@
     "watch": "tsc -w",
     "testonly": "mocha --reporter spec --full-trace ./dist/test/tests.js ",
     "preintegration": "npm run compile",
-    "integration": "mocha --reporter spec --full-trace ./dist/test/integration-tests.js"
+    "integration": "mocha --reporter spec --full-trace ./dist/test/integration-tests.js",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@google-cloud/pubsub": "^2.19.0",
@@ -53,6 +62,7 @@
     "chai-as-promised": "^7.1.1",
     "graphql": "^16.4.0",
     "mocha": "^9.2.2",
+    "semantic-release": "^19.0.2",
     "simple-mock": "^0.8.0",
     "tslint": "^5.20.1",
     "typescript": "^4.6.3"
