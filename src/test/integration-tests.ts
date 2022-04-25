@@ -56,6 +56,12 @@ describe('PubSubAsyncIterator', function () {
     }
   `);
 
+  if (!FIRST_EVENT) {
+    throw new Error(
+      'GCP_PUBSUB_INTEGRATION_TEST_TOPIC environment variable must be set'
+    );
+  }
+
   const pubsub = new GooglePubSub();
   const origIterator = pubsub.asyncIterator(FIRST_EVENT);
   const returnSpy = mock(origIterator, 'return');
