@@ -6,9 +6,9 @@ multiple subscription manager instances.
 
 ## Installation
 
-`npm install @axelspringer/graphql-google-pubsub` 
+`npm install @vikalp_p/graphql-google-pubsub` 
 or
-`yarn add @axelspringer/graphql-google-pubsub`
+`yarn add @vikalp_p/graphql-google-pubsub`
    
 ## Using as AsyncIterator
 
@@ -33,7 +33,7 @@ type Result {
 Now, let's create a simple `GooglePubSub` instance:
 
 ```javascript
-import { GooglePubSub } from '@axelspringer/graphql-google-pubsub';
+import { GooglePubSub } from '@vikalp_p/graphql-google-pubsub';
 const pubsub = new GooglePubSub();
 ```
 
@@ -113,7 +113,7 @@ export const resolvers = {
 ## Creating the Google PubSub Client
 
 ```javascript
-import { GooglePubSub } from '@axelspringer/graphql-google-pubsub';
+import { GooglePubSub } from '@vikalp_p/graphql-google-pubsub';
 
 const pubSub = new GooglePubSub(options, topic2SubName, commonMessageHandler)
 ```
